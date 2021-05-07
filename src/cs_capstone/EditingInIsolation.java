@@ -8,6 +8,9 @@ package cs_capstone;
 public class EditingInIsolation extends FlightData {
     //Test 
     
+    
+    // everything is working in order
+    
     private int nubTest;
 
     public EditingInIsolation(int nubTest, String flightId, String departureTime, String arrivalTime, String assignedAircraftId, double passengerCount, double totalSeats) {
