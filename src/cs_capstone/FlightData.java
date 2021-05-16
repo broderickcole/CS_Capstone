@@ -7,7 +7,7 @@ package cs_capstone;
  * @author colebroderick
  */
 public class FlightData {
-
+    // The varibles that hold the flight data
     public String flightId;
     public String departureTime;
     public String arrivalTime;
@@ -16,6 +16,7 @@ public class FlightData {
     public double totalSeats;
     public double loadF;
 
+    //Contructor to initialize my newly created obkects
     public FlightData(String flightId, String departureTime,
             String arrivalTime, String assignedAircraftId,
             double passengerCount, double totalSeats) {
@@ -27,8 +28,11 @@ public class FlightData {
         this.totalSeats = totalSeats;
     }
 
+    // Class that prints the flight data in a readable format
     public static void printFlights(FlightData[] flights) {
-
+        /*For loop that runs through the array that was created in the CS_Capstone 
+        so that it can print the elements of each object in a readable format
+        */
         for (FlightData flight : flights) {
             System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
             System.out.println("Flight ID: " + flight.getFlightId());
@@ -41,10 +45,12 @@ public class FlightData {
 
         }
     }
-    
+        /*
+        Method that was created to sort the flights by their load factor
+    */
         public static void sortByLoadFactor(FlightData[] flights) {
         for (int i = 0; i < flights.length - 1; i++) {
-            // ** We do not decrease the code below becuase you dont want it to compare the same number. 
+            // ** We do not decrease the code below becuase we dont want it to compare the same number. 
             //         and needs to be compared to the next number
             for (int j = i; j < flights.length; j++) {
                 // ** Below we are comparing the load factors
@@ -61,12 +67,14 @@ public class FlightData {
 
     }
 
+        // Method that gets the load factor by doing basic arithmetic calculations
     public double getLoadFactor() {
         double loadF = (passengerCount * 100) / totalSeats;
         return loadF;
 
     }
 
+    //Getters and setters 
     public String getFlightId() {
         return flightId;
     }
