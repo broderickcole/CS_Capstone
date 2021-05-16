@@ -8,13 +8,13 @@ package cs_capstone;
  */
 public class FlightData {
 
-    private String flightId;
-    private String departureTime;
-    private String arrivalTime;
-    private String assignedAircraftId;
-    private double passengerCount;
-    private double totalSeats;
-    private double loadF;
+    public String flightId;
+    public String departureTime;
+    public String arrivalTime;
+    public String assignedAircraftId;
+    public double passengerCount;
+    public double totalSeats;
+    public double loadF;
 
     public FlightData(String flightId, String departureTime,
             String arrivalTime, String assignedAircraftId,
@@ -40,6 +40,25 @@ public class FlightData {
             System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
 
         }
+    }
+    
+        public static void sortByLoadFactor(FlightData[] flights) {
+        for (int i = 0; i < flights.length - 1; i++) {
+            // ** We do not decrease the code below becuase you dont want it to compare the same number. 
+            //         and needs to be compared to the next number
+            for (int j = i; j < flights.length; j++) {
+                // ** Below we are comparing the load factors
+                if (flights[j].getLoadFactor() > flights[i].getLoadFactor()) {
+                    // ** Below is the swap if [j] is larger than [i] 
+                    //     we have to create a temporary varible for [i] so we dont overwrite it and loose it 
+                    FlightData temp = flights[i];
+                    flights[i] = flights[j];
+                    // then we store the temp [i] in [j]'s place, which is the swap
+                    flights[j] = temp;
+                }
+            }
+        }
+
     }
 
     public double getLoadFactor() {
