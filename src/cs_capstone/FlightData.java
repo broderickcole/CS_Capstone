@@ -6,7 +6,7 @@ package cs_capstone;
  */
 public class FlightData {
 
-    // The varibles that hold the flight data
+    // The varibles that hold the flight data attriubites 
     public String flightId;
     public String departureTime;
     public String arrivalTime;
@@ -29,7 +29,7 @@ public class FlightData {
 
     // Class that prints the flight data in a readable format
     public static void printFlights(FlightData[] flights) {
-        /*For loop that runs through the array that was created in the CS_Capstone 
+        /*For loop that runs through the array that was created in the CS_Capstone main class
         so that it can print the elements of each object in a readable format
          */
         for (FlightData flight : flights) {
