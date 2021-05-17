@@ -24,9 +24,8 @@ public class CS_Capstone {
         
         /**
          * After using the method that gets the loadfactor for each flight, the 
-         * sorting method that is also in the FlightData class 
-         * prints the flights in order based of off their
-         * load factor
+         * sorting method that is also in the FlightData class reorganized the flights and then
+         * prints the flights 
         */ 
         System.out.println("~~ AFTER SORT ~~ \n");
         FlightData.sortByLoadFactor(flights);

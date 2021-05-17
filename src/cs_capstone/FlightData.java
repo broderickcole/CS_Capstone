@@ -46,22 +46,23 @@ public class FlightData {
     }
 
     /*
-        Method that was created to sort the flights by their load factor
+          Method that was created to sort the flights by their load factor
+          
      */
     public static void sortByLoadFactor(FlightData[] flights) {
         for (int i = 0; i < flights.length - 1; i++) {
             // ** We do not decrease the code below becuase we dont want it to compare the same number. 
             //         and needs to be compared to the next number
             for (int j = i; j < flights.length; j++) {
-                // ** Below we are comparing the load factors
+                //  Below we are comparing the load factors
                 if (flights[j].getLoadFactor() > flights[i].getLoadFactor()) {
-                    // ** Below is the swap; if [j] is larger than [i] 
+                    //  Below is the swap; if [j] is larger than [i] 
                     //     we have to create a temporary varible for [i] so we dont overwrite it and loose it 
                     FlightData temp = flights[i];
                     flights[i] = flights[j];
                     // then we store the temp [i] in [j]'s place, which is the swap
                     flights[j] = temp;
-                    //the loops goes until flights[j].getLoadFactor() > flights[i].getLoadFactor() is false
+                    //the loops goes until flights[j] LoadFactor is greater than > flights[i] LoadFactor is false
                 }
             }
         }
