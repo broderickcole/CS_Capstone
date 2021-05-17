@@ -30,6 +30,7 @@ public class CS_Capstone {
         System.out.println("~~ AFTER SORT ~~ \n");
         FlightData.sortByLoadFactor(flights);
         FlightData.printFlights(flights);
+        
     }
 
 }

@@ -7,15 +7,15 @@ package cs_capstone;
 public class FlightData {
 
     // The varibles that hold the flight data attriubites 
-    public String flightId;
-    public String departureTime;
-    public String arrivalTime;
-    public String assignedAircraftId;
-    public double passengerCount;
-    public double totalSeats;
-    public double loadF;
+    private String flightId;
+    private String departureTime;
+    private String arrivalTime;
+    private String assignedAircraftId;
+    private double passengerCount;
+    private double totalSeats;
+    private double loadF;
 
-    //Contructor to initialize my newly created obkects
+    //Contructor to initialize my newly created objects
     public FlightData(String flightId, String departureTime,
             String arrivalTime, String assignedAircraftId,
             double passengerCount, double totalSeats) {
@@ -43,6 +43,7 @@ public class FlightData {
             System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
 
         }
+
     }
 
     /*
