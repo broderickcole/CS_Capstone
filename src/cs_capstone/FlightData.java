@@ -16,7 +16,7 @@ public class FlightData {
     private double passengerCount;
     private double totalSeats;
     private double loadF;
-
+ 
     //Contructor to initialize my newly created objects
     public FlightData(String flightId, String departureTime,
             String arrivalTime, String assignedAircraftId,
