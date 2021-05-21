@@ -15,22 +15,28 @@ public class CS_Capstone {
 
         // Creating an array of the objects
         FlightData[] flights = {flight1, flight2, flight3, flight4};
-        
+
         // Pringting the flights out in the order they were put in
         System.out.println("~~ BEFORE SORT ~~ \n");
         FlightData.printFlights(flights);
 
         System.out.println("\n \n ------------------------ \n \n");
-        
+
         /**
-         * After using the method that gets the loadfactor for each flight, the 
-         * sorting method that is also in the FlightData class reorganized the flights and then
-         * prints the flights 
-        */ 
+         * After using the method that gets the loadfactor for each flight, the
+         * sorting method that is also in the FlightData class reorganized the
+         * flights and then prints the flights
+         */
         System.out.println("~~ AFTER SORT ~~ \n");
         FlightData.sortByLoadFactor(flights);
         FlightData.printFlights(flights);
-        
+
+        System.out.println("\n \n ------------------------ \n \n");
+
+        System.out.println("~~ DO NOT PRINT DUPLICATE FLIGHTS ~~ \n");
+        FlightData.printNoDuplicates(flights);
+        FlightData.printFlights(flights);
+
     }
 
 }

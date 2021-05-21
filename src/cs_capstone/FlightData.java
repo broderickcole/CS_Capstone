@@ -1,5 +1,7 @@
 package cs_capstone;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author colebroderick
@@ -67,6 +69,36 @@ public class FlightData {
                 }
             }
         }
+
+    }
+    
+    
+        public static String printNoDuplicates(FlightData[] flights) {
+        // Below is the ArrayList that uses the java.utility class I imported. 
+        ArrayList<String> seenIDs = new ArrayList<>();
+        // ** Creating a flight varible in the flights string we created in the main method.
+        //         so we can loop through all the flights
+        for (FlightData flight : flights) {
+            // The "!" means does not. If we do not have the "!" it means If seenIDs DOES contain the Flight ID
+            //      then to print it out. We only want Flights to be printed that are not dups 
+            //      and then have them added to our array list
+            if (!seenIDs.contains(flight.getFlightId())) {
+                System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
+                System.out.println("Flight ID: " + flight.getFlightId());
+                System.out.println("Departure Time: " + flight.getDepartureTime());
+                System.out.println("Arrival Time: " + flight.getArrivalTime());
+                System.out.println("Assigned Aircraft: " + flight.getAssignedAircraftId());
+                System.out.println("Passenger count: " + flight.getPassengerCount());
+                System.out.printf("Total Seats on %s is: %.0f %n", flight.flightId, flight.getTotalSeats());
+                System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
+
+                // ** Add this flight id to seenIDs, so we never print another flight with this same ID again.
+                // ** Any flights whose IDs are in this list will not get printed out anymore.
+                seenIDs.add(flight.getFlightId());
+            }
+        }
+        // *** The for loop needs a return statment but since we are not returning anything, we can return NULL
+        return null;
 
     }
 
