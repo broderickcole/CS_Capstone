@@ -16,27 +16,21 @@ public class CS_Capstone {
 
         // Creating a Mongo client 
         MongoClient mongo = new MongoClient("mongodb://Cole:Broderick@3.15.9.1/flights");
-        
+
         // Accessing the database 
         MongoDatabase database = mongo.getDatabase("FlightData");
-        System.out.println("Database Name: "+ database.getName());
-        
-//        System.out.println("Credentials ::" + credential);
-        
-        
-//        // Creating Credentials 
-//        MongoCredential credential;
-//        credential = MongoCredential.createCredential("Cole Broderick", "myDb",
-//                "password".toCharArray());
-//        System.out.println("Connected to the database successfully");
+        System.out.println("Database Name: " + database.getName());
 
-
+        // Creating Credentials 
+        MongoCredential credential;
+        credential = MongoCredential.createCredential("Cole Broderick", "myDb",
+                "password".toCharArray());
+        System.out.println("Credentials ::" + credential);
+        System.out.println("Connected to the database successfully");
 
         // Creating a collection
         database.createCollection("sampleCollection");
         System.out.println("Collection created successfully");
-        
-        
 
         FlightData flight1 = new FlightData("flight_1", "10:00:00", "12:00:00", "aircraft_1", 100, 143);
         FlightData flight2 = new FlightData("flight_2", "07:00:00", "13:00:00", "aircraft_2", 121, 143);
