@@ -97,7 +97,7 @@ public class FlightData {
                 seenIDs.add(flight.getFlightId());
             }
         }
-        // *** The for loop needs a return statment but since we are not returning anything, we can return NULL
+        // The for loop needs a return statment but since we are not returning anything, we can return NULL
         return null;
 
     }
