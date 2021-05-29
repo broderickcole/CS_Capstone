@@ -37,6 +37,9 @@ public class CS_Capstone {
         FlightData.printNoDuplicates(flights);
         FlightData.printFlights(flights);
 
+        System.out.println("~~ FLIGHTS GROUPED TOGETHER BY AIRCRAFT ID ~~ \n");
+        FlightData.groupByAircraftID(flights);
+        FlightData.printFlights(flights);
     }
 
 }
