@@ -16,7 +16,7 @@ public class FlightData {
     private double passengerCount;
     private double totalSeats;
     private double loadF;
- 
+
     //Contructor to initialize my newly created objects
     public FlightData(String flightId, String departureTime,
             String arrivalTime, String assignedAircraftId,
@@ -71,9 +71,8 @@ public class FlightData {
         }
 
     }
-    
-    
-        public static String printNoDuplicates(FlightData[] flights) {
+
+    public static String printNoDuplicates(FlightData[] flights) {
         // Below is the ArrayList that uses the java.utility class I imported. 
         ArrayList<String> seenIDs = new ArrayList<>();
         // ** Creating a flight varible in the flights string we created in the main method.
@@ -100,6 +99,21 @@ public class FlightData {
         // The for loop needs a return statment but since we are not returning anything, we can return NULL
         return null;
 
+    }
+
+    public static void groupByAircraftID(FlightData[] flights) {
+        //Storing the lengh of the Flights array into n
+        int n = flights.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (flights[j].getAssignedAircraftId().compareTo(flights[j + 1].getAssignedAircraftId()) > 0) {
+                    // swap temp and flights[j]
+                    FlightData temp = flights[j];
+                    flights[j] = flights[j + 1];
+                    flights[j + 1] = temp;
+                }
+            }
+        }
     }
 
     // Method that gets the load factor by doing basic arithmetic calculations

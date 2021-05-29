@@ -18,26 +18,23 @@ public class CS_Capstone {
     public static void main(String[] args) {
 
         // Creating a Mongo client 
-        MongoClient mongoClient = new MongoClient("mongodb://Cole:Broderick@3.15.9.1");
-        
+        MongoClient mongoClient = new MongoClient("127.0.0.1");
+
         // Accessing the database 
         MongoDatabase database = mongoClient.getDatabase("flights");
         System.out.println("Database Name: " + database.getName());
+
+        MongoCollection<Document> collection = database.getCollection("myCollection");
+
+        /*
+        //Retrieving the documents
+        FindIterable<Document> iterDoc = collection.find();
+        Iterator it = iterDoc.iterator();
         
-      //I guess im just confused on this part. 
-      
-      //MongoCollection<Document> collection = database.getCollection("myCollection"); 
-      // I havent programmed with java in a whiel and for some reason get confused when they use the words in replace of the code. I never k
-      MongoCollection<Document> collection = database.getCollection("myCollection");
-      //Retrieving the documents
-      FindIterable<Document> iterDoc = collection.find();
-      Iterator it = iterDoc.iterator();
-      while (it.hasNext()) {
-         System.out.println(it.next());
-      }
-
-
-
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+         */
         FlightData flight1 = new FlightData("flight_1", "10:00:00", "12:00:00", "aircraft_1", 100, 143);
         FlightData flight2 = new FlightData("flight_2", "07:00:00", "13:00:00", "aircraft_2", 121, 143);
         FlightData flight3 = new FlightData("flight_3", "16:show 00:00", "19:00:00", "aircraft_1", 166, 175);
@@ -66,6 +63,7 @@ public class CS_Capstone {
         System.out.println("~~ DO NOT PRINT DUPLICATE FLIGHTS ~~ \n");
         FlightData.printNoDuplicates(flights);
         FlightData.printFlights(flights);
+
 
     }
 
