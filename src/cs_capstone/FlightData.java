@@ -31,9 +31,7 @@ public class FlightData {
 
     // Class that prints the flight data in a readable format
     public static void printFlights(FlightData[] flights) {
-        /*For loop that runs through the array that was created in the CS_Capstone main class
-        so that it can print the elements of each object in a readable format
-         */
+
         for (FlightData flight : flights) {
             System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
             System.out.println("Flight ID: " + flight.getFlightId());
@@ -48,24 +46,14 @@ public class FlightData {
 
     }
 
-    /*
-          Method that was created to sort the flights by their load factor
-          
-     */
+    //Sorting method
     public static void sortByLoadFactor(FlightData[] flights) {
         for (int i = 0; i < flights.length - 1; i++) {
-            // ** We do not decrease the code below becuase we dont want it to compare the same number. 
-            //         and needs to be compared to the next number
             for (int j = i; j < flights.length; j++) {
-                //  Below we are comparing the load factors
                 if (flights[j].getLoadFactor() > flights[i].getLoadFactor()) {
-                    //  Below is the swap; if [j] is larger than [i] 
-                    //     we have to create a temporary varible for [i] so we dont overwrite it and loose it 
                     FlightData temp = flights[i];
                     flights[i] = flights[j];
-                    // then we store the temp [i] in [j]'s place, which is the swap
                     flights[j] = temp;
-                    //the loops goes until flights[j] LoadFactor is greater than > flights[i] LoadFactor is false
                 }
             }
         }
@@ -73,14 +61,8 @@ public class FlightData {
     }
 
     public static String printNoDuplicates(FlightData[] flights) {
-        // Below is the ArrayList that uses the java.utility class I imported. 
         ArrayList<String> seenIDs = new ArrayList<>();
-        // ** Creating a flight varible in the flights string we created in the main method.
-        //         so we can loop through all the flights
         for (FlightData flight : flights) {
-            // The "!" means does not. If we do not have the "!" it means If seenIDs DOES contain the Flight ID
-            //      then to print it out. We only want Flights to be printed that are not dups 
-            //      and then have them added to our array list
             if (!seenIDs.contains(flight.getFlightId())) {
                 System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
                 System.out.println("Flight ID: " + flight.getFlightId());
@@ -90,24 +72,19 @@ public class FlightData {
                 System.out.println("Passenger count: " + flight.getPassengerCount());
                 System.out.printf("Total Seats on %s is: %.0f %n", flight.flightId, flight.getTotalSeats());
                 System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
-
-                // ** Add this flight id to seenIDs, so we never print another flight with this same ID again.
-                // ** Any flights whose IDs are in this list will not get printed out anymore.
                 seenIDs.add(flight.getFlightId());
             }
         }
-        // *** The for loop needs a return statment but since we are not returning anything, we can return NULL
         return null;
 
     }
 
+    //Method that groups flights by their aircraft ID
     public static void groupByAircraftID(FlightData[] flights) {
-        //Storing the lengh of the Flights array into n
         int n = flights.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (flights[j].getAssignedAircraftId().compareTo(flights[j + 1].getAssignedAircraftId()) > 0) {
-                    // swap temp and flights[j]
                     FlightData temp = flights[j];
                     flights[j] = flights[j + 1];
                     flights[j + 1] = temp;
