@@ -3,7 +3,7 @@ Computer Science Capstone
 
 This is a program that users and input flight data and organize it so that it is easily readable. 
 
-##**Professional Self-Assessment:**
+**##Professional Self-Assessment:**
 	Completing the coursework throughout my education has not only help me expand my knowledge in the computer science field but has also taught me patience, persistence and that there is more than one way to complete a task. Furthermore, the concepts covered in the Southern New Hampshire (SNHU) Computer Science program has prepared me for my professional career. Learning how to collaborate in a team environment is one of the most important aspects of Software development as many companies work in Teams since their objective is to deliver a product or service to a mass audience. 
 
 During my time at SNHU, I took was Software Development Lifecyle which introduced me to what working on a Team during the Software Development lifecycle (SDLC). The main topic we discussed in the course was the different methodologies that take place in Software development such as the Agile methodology. Unlike the waterfall method, which works from the top down, Agile allows Teams to work on sprints for a project and continuously refine the artifact until the goal is met during the SDLC. This class allowed me to walk in the ‘shoes’ of each role that is on a Scrum Team, which aided in my success in the classes I took later on that used this SDLC methodology and have prepared me for my professional career. 
