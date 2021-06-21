@@ -1,5 +1,10 @@
 package cs_capstone;
-
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import java.util.ArrayList;
+import org.bson.Document;
 import java.util.ArrayList;
 
 /**
@@ -42,6 +47,40 @@ public class FlightData {
             System.out.printf("Total Seats on %s is: %d %n", flight.flightId, (int) flight.getTotalSeats());
             System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
 
+        }
+
+    }
+    
+     public static void storingDataInMD(FlightData[] flights) {
+
+        MongoClient mongo = new MongoClient("3.141.244.5", 27017);
+
+        MongoCredential credential;
+        credential = MongoCredential.createCredential("ColeB", "flights",
+                "password".toCharArray());
+        System.out.println("Connected to the database successfully");
+
+        // Accessing the database 
+        MongoDatabase database = mongo.getDatabase("flights");
+        System.out.println("Database Name: " + database.getName());
+        System.out.println("Credentials :" + credential);
+
+        // Retrieving a collection
+        MongoCollection<Document> collection = database.getCollection("FlightData");
+        System.out.println("Collection sampleCollection selected successfully");
+        
+
+        for (FlightData flight : flights) {
+            Document FlightData = new Document();
+            //Inserting document into the collection
+            FlightData.append("flight ID", flight.getFlightId());
+            FlightData.append("Departure time", flight.departureTime);
+            FlightData.append("Arrival Time", flight.getArrivalTime());
+            FlightData.append("Assgined aircraft ID:", flight.getAssignedAircraftId());
+            FlightData.append("Passenger Count", flight.getPassengerCount());
+            FlightData.append("Total Seats", flight.getTotalSeats());
+            
+            System.out.println("Document inserted successfully");
         }
 
     }
