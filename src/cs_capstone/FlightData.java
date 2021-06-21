@@ -57,7 +57,7 @@ public class FlightData {
 
         MongoCredential credential;
         credential = MongoCredential.createCredential("ColeB", "flights",
-                "password".toCharArray());
+                "BrodericksPassword".toCharArray());
         System.out.println("Connected to the database successfully");
 
         // Accessing the database 
