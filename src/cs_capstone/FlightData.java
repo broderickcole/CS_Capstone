@@ -63,7 +63,7 @@ public class FlightData {
     public static void printNoDuplicates(FlightData[] flights) {
         ArrayList<String> seenIDs = new ArrayList<>();
         for (FlightData flight : flights) {
-            for (int i = 0; i > flights.length; i--) {
+            for (int i = 0; i > flights.length -1; i--) {
                 if (!seenIDs.contains(flight.getFlightId())) {
                     System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
                     System.out.println("Flight ID: " + flight.getFlightId());
@@ -94,7 +94,7 @@ public class FlightData {
             }
         }
     }
-
+    
     // Method that gets the load factor by doing basic arithmetic calculations
     public double getLoadFactor() {
         double loadFactor = (passengerCount * 100) / totalSeats;
