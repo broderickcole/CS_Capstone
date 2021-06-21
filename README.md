@@ -43,19 +43,25 @@ It is designed to get rid of the duplicate flights that may have accidently been
 	For the database section of my final project, I decided to use MongoDB. MongoDB is a nonrelational database that is easily scalable compared to other databases such as SQL. Rather than having to set the number of ‘rows’ and ‘columns’, it allows the user to insert collections and doesn’t need to always have the same number of items. After much trial and error with MongoDB, I was able to establish a connection and have the code working properly. I have added code that allows me to access a collection in the database that then loops through the collection to print out the name of each document that is in the database. 
 
 One of the challenges I was running into with my MongoDB was the authorization. The code below is what I used to start my database without requiring authorization so that I could then change the databases security settings.
-#start mongo without authentication
-/usr/local/bin/mongod_ctl start-noauth
-#or
-/usr/local/bin/mongod_ctl start
-It took me numerous attempts to be able to access the database and kept having to set up a new one since I only have the free version of AWS and my Ec2 instance would run out of time. 
-I used the code below to create an admin account for my database; by doing this, it will keep any unwanted users from accessing my data, which will help with the security aspect of my program since the data is going to be stored on a remote server. 
+
+	#start mongo without authentication
+
+	/usr/local/bin/mongod_ctl start-noauth
+
+	#or
+
+	/usr/local/bin/mongod_ctl start
+
+It took me numerous attempts to be able to access the database and kept having to set up a new one since I only have the free version of AWS and my Ec2 instance would run out of time. I used the code below to create an admin account for my database; by doing this, it will keep any unwanted users from accessing my data, which will help with the security aspect of my program since the data is going to be stored on a remote server. 
  
-use admin
-db.createUser(
-  {
-    user: “ColeB",
-    pwd: “BrodericksPassword”, 
-    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
-  }
-)
-![image](https://user-images.githubusercontent.com/83793863/122699069-4beb0280-d20e-11eb-8822-8e2f7c11ffda.png)
+	use admin
+
+	db.createUser(
+
+	  {
+	    user: “ColeB",
+	    pwd: “BrodericksPassword”, 
+	    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+	  }
+	)
+
