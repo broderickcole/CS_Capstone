@@ -38,8 +38,8 @@ public class FlightData {
             System.out.println("Departure Time: " + flight.getDepartureTime());
             System.out.println("Arrival Time: " + flight.getArrivalTime());
             System.out.println("Assigned Aircraft ID: " + flight.getAssignedAircraftId());
-            System.out.println("Passenger count: " + flight.getPassengerCount());
-            System.out.printf("Total Seats on %s is: %.0f %n", flight.flightId, flight.getTotalSeats());
+            System.out.println("Passenger count: " + (int) flight.getPassengerCount());
+            System.out.printf("Total Seats on %s is: %d %n", flight.flightId, (int) flight.getTotalSeats());
             System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
 
         }
@@ -60,32 +60,34 @@ public class FlightData {
 
     }
 
-    public static String printNoDuplicates(FlightData[] flights) {
+    public static void printNoDuplicates(FlightData[] flights) {
         ArrayList<String> seenIDs = new ArrayList<>();
         for (FlightData flight : flights) {
-            if (!seenIDs.contains(flight.getFlightId())) {
-                System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
-                System.out.println("Flight ID: " + flight.getFlightId());
-                System.out.println("Departure Time: " + flight.getDepartureTime());
-                System.out.println("Arrival Time: " + flight.getArrivalTime());
-                System.out.println("Assigned Aircraft: " + flight.getAssignedAircraftId());
-                System.out.println("Passenger count: " + flight.getPassengerCount());
-                System.out.printf("Total Seats on %s is: %.0f %n", flight.flightId, flight.getTotalSeats());
-                System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
-                seenIDs.add(flight.getFlightId());
+            for (int i = 0; i > flights.length; i--) {
+                if (!seenIDs.contains(flight.getFlightId())) {
+                    System.out.printf("The information for %s is as follows: %n", flight.getFlightId());
+                    System.out.println("Flight ID: " + flight.getFlightId());
+                    System.out.println("Departure Time: " + flight.getDepartureTime());
+                    System.out.println("Arrival Time: " + flight.getArrivalTime());
+                    System.out.println("Assigned Aircraft: " + flight.getAssignedAircraftId());
+                    System.out.printf("Passenger count: %d", (int) flight.getPassengerCount());
+                    System.out.printf("Total Seats on %s is: %d %n", flight.flightId, (int) flight.getTotalSeats());
+                    System.out.printf("The load factor of %s is: %.5f%% %n %n", flight.getFlightId(), flight.getLoadFactor());
+                    seenIDs.add(flight.getFlightId());
+                }
             }
         }
-        return null;
 
     }
 
     //Method that groups flights by their aircraft ID
     public static void groupByAircraftID(FlightData[] flights) {
-        int n = flights.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
+        FlightData temp;
+      
+        for (int i = flights.length - 1; i > 0 ; i--) {
+            for (int j = 0; j < i ; j++) {
                 if (flights[j].getAssignedAircraftId().compareTo(flights[j + 1].getAssignedAircraftId()) > 0) {
-                    FlightData temp = flights[j];
+                    temp = flights[j];
                     flights[j] = flights[j + 1];
                     flights[j + 1] = temp;
                 }
@@ -95,8 +97,8 @@ public class FlightData {
 
     // Method that gets the load factor by doing basic arithmetic calculations
     public double getLoadFactor() {
-        double loadF = (passengerCount * 100) / totalSeats;
-        return loadF;
+        double loadFactor = (passengerCount * 100) / totalSeats;
+        return loadFactor;
 
     }
 
