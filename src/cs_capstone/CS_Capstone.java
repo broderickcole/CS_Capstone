@@ -32,10 +32,11 @@ public class CS_Capstone {
         FlightData.printNoDuplicates(flights);
         FlightData.printFlights(flights);
 
-        System.out.println("~~ STORING FLIGHTS IN MONGODB");
+        System.out.println("~~ FLIGHTS GROUPED TOGETHER BY AIRCRAFT");
         FlightData.groupByAircraftID(flights);
         FlightData.printFlights(flights);
-        
+
+        System.out.println("~~ STORING FLIGHTS IN MONGODB ~~");
         FlightData.storingDataInMD(flights);
     }
 
