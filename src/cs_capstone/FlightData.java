@@ -72,14 +72,14 @@ public class FlightData {
 
         for (FlightData flight : flights) {
             Document FlightData = new Document();
-            //Inserting document into the collection
+            //Inserting DATA into the collection
             FlightData.append("flight ID", flight.getFlightId());
             FlightData.append("Departure time", flight.departureTime);
             FlightData.append("Arrival Time", flight.getArrivalTime());
             FlightData.append("Assgined aircraft ID:", flight.getAssignedAircraftId());
             FlightData.append("Passenger Count", flight.getPassengerCount());
             FlightData.append("Total Seats", flight.getTotalSeats());
-            
+            FlightData.append("The Load Factor is", flight.getLoadFactor());
             System.out.println("Document inserted successfully");
         }
 

@@ -17,24 +17,26 @@ public class CS_Capstone {
         FlightData[] flights = {flight1, flight2, flight3, flight4};
 
         // Pringting the flights out in the order they were put in
-        System.out.println("~~ BEFORE SORT ~~ \n");
+        System.out.println("~~ BEFORE SORT ~~");
         FlightData.printFlights(flights);
 
         System.out.println("\n \n ------------------------ \n \n");
 
-        System.out.println("~~ AFTER SORT ~~ \n");
+        System.out.println("~~ AFTER SORT ~~ ");
         FlightData.sortByLoadFactor(flights);
         FlightData.printFlights(flights);
 
         System.out.println("\n \n ------------------------ \n \n");
 
-        System.out.println("~~ DO NOT PRINT DUPLICATE FLIGHTS ~~ \n");
+        System.out.println("~~ DO NOT PRINT DUPLICATE FLIGHTS ~~");
         FlightData.printNoDuplicates(flights);
         FlightData.printFlights(flights);
 
-        System.out.println("~~ FLIGHTS GROUPED TOGETHER BY AIRCRAFT ID ~~ \n");
+        System.out.println("~~ STORING FLIGHTS IN MONGODB");
         FlightData.groupByAircraftID(flights);
         FlightData.printFlights(flights);
+        
+        FlightData.storingDataInMD(flights);
     }
 
 }
