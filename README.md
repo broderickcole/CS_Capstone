@@ -16,31 +16,31 @@ In my final project, I used GitHub to make adjustments where they were needed so
 
 For the database and security part of my project, I created a remote service that can only be accessed if the users IP address is whitelisted on the server and has the correct credentials. Once users have access, they will be able to insert reports into a MongoDB that will filter out any duplicate flights so that they can later be called on to summarize reports for the Network Operations Team. The topics will be discussed more in depth in the artifact section of my paper. 
 
-##**Informal Code Review:**
+## **Informal Code Review:**
 [Click here](https://drive.google.com/file/d/1oZc4IMBpLZtUlXO_ty8daN8XWxCpE01d/view?usp=sharing) to view the code review  
 
-##**ePortfolio:**
+## **ePortfolio:**
 [Click here](https://github.com/broderickcole/CS_Capstone) to view my GitHub repository. 
 
-##**Artifact & Narrative:**
-	The artifact I have chosen to use throughout this course isn’t a project that I have done in school; rather, it is a coding assignment I was given during an interview that I didn’t do well on. I applied to be an Associate Software Engineer with Southwest Airlines and, if I’m being completely honest, I wasn’t prepared for the face-to-face interview. During my phone interview, I asked the recruiter for any tips so that I could prepare for the face-to-face interview. I was advised to just be able to talk about what I have done in school, why I want the position, and that there wouldn’t be any coding involved. I’m confident he didn’t intentionally set me up for failure and I honestly should have been more prepared, which is why I am excited that we get to pick a project of our choosing for this class. 
+## **Artifact & Narrative:**
+The artifact I have chosen to use throughout this course isn’t a project that I have done in school; rather, it is a coding assignment I was given during an interview that I didn’t do well on. I applied to be an Associate Software Engineer with Southwest Airlines and, if I’m being completely honest, I wasn’t prepared for the face-to-face interview. During my phone interview, I asked the recruiter for any tips so that I could prepare for the face-to-face interview. I was advised to just be able to talk about what I have done in school, why I want the position, and that there wouldn’t be any coding involved. I’m confident he didn’t intentionally set me up for failure and I honestly should have been more prepared, which is why I am excited that we get to pick a project of our choosing for this class. 
 
 See, when they called to let me know I didn’t get the job, they also advised me that they didn’t hire anyone due to their Senior Software Engineers (SSE) deciding that they just not having the time to train anyone new. However, he did let me know I was the favorite of the group and that the hiring manager was so close to hiring me, but the SSE’s asked him to wait and let me reapply in June. So, with all that being said, I want to use this real-life experience for my project so when June comes, I can show how much I have improved.   
 
-##**Algorithms and Data Structure:** 
-	The artifact I choose for the Algorithms and data Structure was to create a sorting method that would group flights by their aircraft ID. I created the method in week four of this course. This method will be helpful when pulling reports to analyze trends, which in return, would allow an airline to forecast seat trajectory and any promotions they would like to do. 
+## **Algorithms and Data Structure:** 
+The artifact I choose for the Algorithms and data Structure was to create a sorting method that would group flights by their aircraft ID. I created the method in week four of this course. This method will be helpful when pulling reports to analyze trends, which in return, would allow an airline to forecast seat trajectory and any promotions they would like to do. 
 
 I originally wanted to do a has map and key for this method but decided to go with what I know, which is bubble sorting. The method calls the compareTo method that is imported in the java.util.ArrayList library to compare the aircrafts ID. It loops through the array and uses a temporary variable to hold the object whenever a swap is needed. 
 
 After running the program and having the flights sorted by the groupByAircraftID and then printed by my printFlights method, they were all printed in their new groups, which means I successfully completed what I was intending to do. However, One of the challenges I ran into was getting the bubble sorting down. See, for the second loop in the method ( for (int j = 0; j < n - i - 1; j++) ), I had to do a lot of trail and error to get it to work correctly.
 
-##**Software Design and Engineering:**
-	I have created a printNoDuplicate method during week 3 that passes in the Flight Data array of objects that was previously created. In the method, I created a new empty array list that is later used to store the flights that are not duplicates. I use a for loop to go through the Flight Data array and if the flight isn’t already seen in the new array list, it appends it to the array list. 
+## **Software Design and Engineering:**
+I have created a printNoDuplicate method during week 3 that passes in the Flight Data array of objects that was previously created. In the method, I created a new empty array list that is later used to store the flights that are not duplicates. I use a for loop to go through the Flight Data array and if the flight isn’t already seen in the new array list, it appends it to the array list. 
 
 It is designed to get rid of the duplicate flights that may have accidently been logged. See, Airlines use this data to create reports so they can analyze the trends with flight capacities. This allows them to plan the next year’s schedule and, if they need to, they will make adjustments to maximize their fleet. If there are duplicate flights, it could throw off their reports, which would cost them money. 
 
-##**Databases:**
-	For the database section of my final project, I decided to use MongoDB. MongoDB is a nonrelational database that is easily scalable compared to other databases such as SQL. Rather than having to set the number of ‘rows’ and ‘columns’, it allows the user to insert collections and doesn’t need to always have the same number of items. After much trial and error with MongoDB, I was able to establish a connection and have the code working properly. I have added code that allows me to access a collection in the database that then loops through the collection to print out the name of each document that is in the database. 
+## **Databases:**
+For the database section of my final project, I decided to use MongoDB. MongoDB is a nonrelational database that is easily scalable compared to other databases such as SQL. Rather than having to set the number of ‘rows’ and ‘columns’, it allows the user to insert collections and doesn’t need to always have the same number of items. After much trial and error with MongoDB, I was able to establish a connection and have the code working properly. I have added code that allows me to access a collection in the database that then loops through the collection to print out the name of each document that is in the database. 
 
 One of the challenges I was running into with my MongoDB was the authorization. The code below is what I used to start my database without requiring authorization so that I could then change the databases security settings.
 
